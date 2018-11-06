@@ -1,0 +1,58 @@
+<p>
+  Here is input-data!
+</p>
+<form #form="ngForm" (ngSubmit)="submitForm (form.value)">
+  <div class="form-group">
+    <label>名字：</label>
+    <!-- 這邊的 ngModal 是單向綁定，只會送資料回去。當然我們也可以用 [(ngModal)] 來雙向綁定表格的值 -->
+    <input type="text" class="form-control" placeholder="小明" name="firstName" [(ngModel)] = "firstName" required>
+  </div>
+  <div class="form-group">
+    <label>姓氏：</label>
+    <input type="text" class="form-control" placeholder="王" name="lastName" [(ngModel)] = "lastName" required>
+  </div>
+
+  <div class="form-group">
+    <label>性別</label>
+  </div>
+  <!-- Radio 和 checkbox 跟一般的 HTML用法差不多 -->
+  <div class="radio">
+    <label>
+      <input type="radio" name="gender" value="Male" [(ngModel)] = "gender">
+      男
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="gender" value="Female" [(ngModel)] = "gender">
+      女
+    </label>
+  </div>
+  <div class="form-group">
+    <label>工作</label>
+  </div>
+  <label class="checkbox-inline">
+    <input type="radio" value="engineer" name="engineer" [(ngModel)] = "work">
+    工程師
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" value="lawyer" name="lawyer" [(ngModel)] = "work">
+    律師
+  </label>
+  <label class="checkbox-inline">
+    <input type="radio" value="Doctor" name="Doctor" [(ngModel)] = "work">
+    醫師
+  </label>
+  <div class="form-group">
+    <input type="number" value="cash" name="cash" [(ngModel)]="cash">
+    月薪
+    <input type="number" value="month" name="month" [(ngModel)]="month">
+    月
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default" >Submit</button>
+    <!-- <a routerLink="/employee-detail/employee-detail.component.html">Submit</a> -->
+  </div>
+</form>
+
+
